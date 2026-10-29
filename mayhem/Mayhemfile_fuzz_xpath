@@ -1,0 +1,10 @@
+project: savantenvs/pugixml
+target: fuzz_xpath
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_xpath/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_xpath
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_xpath/fuzz_xpath.dict
+    timeout: 5
